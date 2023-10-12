@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# This website is in React for now. 
+# We can always change it to something else if we want.
+
+#
+#
+#
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
