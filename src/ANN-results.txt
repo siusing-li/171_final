@@ -1,0 +1,578 @@
+
+MLPClassifier(activation='logistic', hidden_layer_sizes=(17, 3),
+              learning_rate_init=0.15, max_iter=3000, random_state=42,
+              solver='sgd')
+Optimal MSE: 0.11
+
+Accuracy :  0.66
+Mean Square Error :  0.339
+[[1 0]
+ [1 0]
+ [1 0]
+ [0 1]
+ [0 1]]
+Confusion Matrix for each label : 
+[[[ 82  59]
+  [110 249]]
+
+ [[249 110]
+  [ 60  81]]]
+Classification Report : 
+              precision    recall  f1-score   support
+
+           0       0.81      0.69      0.75       359
+           1       0.42      0.57      0.49       141
+
+   micro avg       0.66      0.66      0.66       500
+   macro avg       0.62      0.63      0.62       500
+weighted avg       0.70      0.66      0.67       500
+ samples avg       0.66      0.66      0.66       500
+
+Accuracy
+[0.77 0.67 0.77 0.76 0.74 0.66 0.67 0.8  0.8  0.72]
+MSE
+[0.23  0.33  0.23  0.24  0.26  0.34  0.325 0.2   0.2   0.28 ]
+Average Accuracy =  0.736
+Average MSE =  0.26350000000000007
+
+k-fold
+Average Accuracy =  0.8530000000000001
+Average MSE =  0.14700000000000002
+
+
+
+\
+
+MLPClassifier(activation='logistic', batch_size=100, hidden_layer_sizes=(1, 8),
+              learning_rate_init=0.15, max_iter=500, random_state=42,
+              solver='sgd')
+Optimal Hyper-parameters :  {'hidden_layer_sizes': (1, 8), 'learning_rate_init': 0.15, 'max_iter': 500}
+Optimal Accuracy :  0.7550000000000001
+Optimal MSE: 0.235
+
+Accuracy :  0.718
+Mean Square Error :  0.282
+[[1 0]
+ [1 0]
+ [1 0]
+ [1 0]
+ [1 0]]
+Confusion Matrix for each label : 
+[[[  0 141]
+  [  0 359]]
+
+ [[359   0]
+  [141   0]]]
+Classification Report : 
+              precision    recall  f1-score   support
+
+           0       0.72      1.00      0.84       359
+           1       0.00      0.00      0.00       141
+
+   micro avg       0.72      0.72      0.72       500
+   macro avg       0.36      0.50      0.42       500
+weighted avg       0.52      0.72      0.60       500
+ samples avg       0.72      0.72      0.72       500
+
+Accuracy
+[0.82 0.67 0.78 0.77 0.74 0.73 0.66 0.76 0.8  0.78]
+MSE
+[0.18  0.33  0.22  0.23  0.26  0.27  0.34  0.235 0.2   0.22 ]
+Average Accuracy =  0.751
+Average MSE =  0.24850000000000003
+
+k-fold
+Average Accuracy =  0.7739999999999999
+Average MSE =  0.22550000000000003
+
+
+\ good one i think
+MLPClassifier(activation='logistic', batch_size=100,
+              hidden_layer_sizes=(15, 15), learning_rate_init=0.05,
+              max_iter=1000, random_state=42, solver='sgd')
+Optimal MSE: 0.207
+
+Accuracy :  0.766
+Mean Square Error :  0.234
+[[1 0]
+ [1 0]
+ [0 1]
+ [1 0]
+ [0 1]]
+Confusion Matrix for each label : 
+[[[ 67  70]
+  [ 47 316]]
+
+ [[316  47]
+  [ 70  67]]]
+Classification Report : 
+              precision    recall  f1-score   support
+
+           0       0.82      0.87      0.84       363
+           1       0.59      0.49      0.53       137
+
+   micro avg       0.77      0.77      0.77       500
+   macro avg       0.70      0.68      0.69       500
+weighted avg       0.76      0.77      0.76       500
+ samples avg       0.77      0.77      0.77       500
+
+Accuracy
+[0.86 0.68 0.77 0.79 0.74 0.72 0.65 0.79 0.8  0.78]
+MSE
+[0.14 0.32 0.23 0.21 0.26 0.28 0.35 0.21 0.2  0.22]
+Average Accuracy =  0.758
+Average MSE =  0.24200000000000005
+
+k-fold
+Average Accuracy =  0.77
+Average MSE =  0.22900000000000004
+
+
+
+\ a good one i think
+MLPClassifier(activation='logistic', batch_size=100, hidden_layer_sizes=(4, 14),
+              learning_rate_init=0.05, max_iter=1500, random_state=42,
+              solver='sgd')
+Optimal MSE: 0.226
+
+Accuracy :  0.766
+Mean Square Error :  0.234
+[[1 0]
+ [1 0]
+ [0 1]
+ [1 0]
+ [0 1]]
+Confusion Matrix for each label : 
+[[[ 72  65]
+  [ 52 311]]
+
+ [[311  52]
+  [ 65  72]]]
+Classification Report : 
+              precision    recall  f1-score   support
+
+           0       0.83      0.86      0.84       363
+           1       0.58      0.53      0.55       137
+
+   micro avg       0.77      0.77      0.77       500
+   macro avg       0.70      0.69      0.70       500
+weighted avg       0.76      0.77      0.76       500
+ samples avg       0.77      0.77      0.77       500
+
+Accuracy
+[0.87 0.67 0.79 0.78 0.74 0.74 0.7  0.8  0.82 0.77]
+MSE
+[0.13 0.33 0.21 0.22 0.26 0.26 0.3  0.2  0.18 0.23]
+Average Accuracy =  0.7680000000000001
+Average MSE =  0.23199999999999998
+
+k-fold
+Accuracy for batch  1  :  0.87
+Mean Square Error for batch  1  :  0.13
+
+Accuracy for batch  2  :  0.73
+Mean Square Error for batch  2  :  0.27
+
+Accuracy for batch  3  :  0.8
+Mean Square Error for batch  3  :  0.2
+
+Accuracy for batch  4  :  0.78
+Mean Square Error for batch  4  :  0.22
+
+Accuracy for batch  5  :  0.73
+Mean Square Error for batch  5  :  0.27
+
+Accuracy for batch  6  :  0.76
+Mean Square Error for batch  6  :  0.24
+
+Accuracy for batch  7  :  0.7
+Mean Square Error for batch  7  :  0.3
+
+Accuracy for batch  8  :  0.79
+Mean Square Error for batch  8  :  0.21
+...
+Mean Square Error for batch  10  :  0.23
+
+Average Accuracy =  0.774
+Average MSE =  0.22600000000000003
+
+
+\
+MLPClassifier(activation='logistic', hidden_layer_sizes=(30, 31),
+              learning_rate_init=0.06, max_iter=2000, random_state=42,
+              solver='sgd')
+Optimal MSE: 0.232
+Optimal Accuracy :  0.766
+
+Accuracy :  0.748
+Mean Square Error :  0.252
+[[1 0]
+ [1 0]
+ [1 0]
+ [1 0]
+ [0 1]]
+Confusion Matrix for each label : 
+[[[ 73  68]
+  [ 58 301]]
+
+ [[301  58]
+  [ 68  73]]]
+Classification Report : 
+              precision    recall  f1-score   support
+
+           0       0.82      0.84      0.83       359
+           1       0.56      0.52      0.54       141
+
+   micro avg       0.75      0.75      0.75       500
+   macro avg       0.69      0.68      0.68       500
+weighted avg       0.74      0.75      0.75       500
+ samples avg       0.75      0.75      0.75       500
+
+Accuracy
+[0.87 0.67 0.79 0.78 0.74 0.74 0.7  0.8  0.82 0.77]
+MSE
+[0.13 0.33 0.21 0.22 0.26 0.26 0.3  0.2  0.18 0.23]
+Average Accuracy =  0.7680000000000001
+Average MSE =  0.23199999999999998
+
+k-fold
+Average Accuracy =  0.774
+Average MSE =  0.22600000000000003
+
+
+\
+MLPClassifier(activation='logistic', batch_size=100,
+              hidden_layer_sizes=(37, 16), learning_rate_init=0.05,
+              max_iter=1500, random_state=42, solver='sgd')
+Optimal MSE: 0.223
+
+Accuracy :  0.764
+Mean Square Error :  0.235
+[[1 0]
+ [1 0]
+ [0 1]
+ [1 0]
+ [0 1]]
+Confusion Matrix for each label : 
+[[[ 67  70]
+  [ 48 315]]
+
+ [[316  47]
+  [ 70  67]]]
+Classification Report : 
+              precision    recall  f1-score   support
+
+           0       0.82      0.87      0.84       363
+           1       0.59      0.49      0.53       137
+
+   micro avg       0.77      0.76      0.76       500
+   macro avg       0.70      0.68      0.69       500
+weighted avg       0.76      0.76      0.76       500
+ samples avg       0.76      0.76      0.76       500
+
+Accuracy
+[0.85 0.66 0.79 0.79 0.74 0.73 0.65 0.78 0.79 0.79]
+MSE
+[0.15 0.34 0.21 0.21 0.26 0.27 0.35 0.22 0.21 0.21]
+Average Accuracy =  0.7570000000000001
+Average MSE =  0.24300000000000002
+
+k-fold
+Accuracy for batch  1  :  0.85
+Mean Square Error for batch  1  :  0.15
+
+Accuracy for batch  2  :  0.7
+Mean Square Error for batch  2  :  0.3
+
+Accuracy for batch  3  :  0.77
+Mean Square Error for batch  3  :  0.22
+
+Accuracy for batch  4  :  0.81
+Mean Square Error for batch  4  :  0.19
+
+Accuracy for batch  5  :  0.76
+Mean Square Error for batch  5  :  0.24
+
+Accuracy for batch  6  :  0.75
+Mean Square Error for batch  6  :  0.25
+
+Accuracy for batch  7  :  0.69
+Mean Square Error for batch  7  :  0.31
+
+Accuracy for batch  8  :  0.8
+Mean Square Error for batch  8  :  0.2
+
+Accuracy for batch  9  :  0.79
+Mean Square Error for batch  9  :  0.21
+
+Accuracy for batch  10  :  0.79
+Mean Square Error for batch  10  :  0.21
+
+Average Accuracy =  0.771
+Average MSE =  0.22799999999999998
+
+
+
+\ a good one i think (best one? idk)
+MLPClassifier(activation='logistic', hidden_layer_sizes=(3, 15),
+              learning_rate_init=0.3, max_iter=500, random_state=42,
+              solver='sgd')
+Optimal MSE: 0.222
+Average Accuracy =  0.7789999999999999
+Average MSE =  0.2205
+
+Accuracy :  0.768
+Mean Square Error :  0.231
+[[1 0]
+ [1 0]
+ [0 1]
+ [1 0]
+ [0 1]]
+Confusion Matrix for each label : 
+[[[ 80  57]
+  [ 58 305]]
+
+ [[304  59]
+  [ 57  80]]]
+Classification Report : 
+              precision    recall  f1-score   support
+
+           0       0.84      0.84      0.84       363
+           1       0.58      0.58      0.58       137
+
+   micro avg       0.77      0.77      0.77       500
+   macro avg       0.71      0.71      0.71       500
+weighted avg       0.77      0.77      0.77       500
+ samples avg       0.77      0.77      0.77       500
+
+Accuracy
+[0.84 0.67 0.77 0.77 0.72 0.76 0.65 0.73 0.78 0.74]
+MSE
+[0.16 0.33 0.23 0.23 0.28 0.24 0.35 0.27 0.22 0.26]
+Average Accuracy =  0.7430000000000001
+Average MSE =  0.257
+
+
+Accuracy for batch  1  :  0.84
+Mean Square Error for batch  1  :  0.16
+
+Accuracy for batch  2  :  0.75
+Mean Square Error for batch  2  :  0.25
+
+Accuracy for batch  3  :  0.82
+Mean Square Error for batch  3  :  0.18
+
+Accuracy for batch  4  :  0.77
+Mean Square Error for batch  4  :  0.23
+
+Accuracy for batch  5  :  0.72
+Mean Square Error for batch  5  :  0.275
+
+Accuracy for batch  6  :  0.76
+Mean Square Error for batch  6  :  0.24
+
+Accuracy for batch  7  :  0.75
+Mean Square Error for batch  7  :  0.25
+
+Accuracy for batch  8  :  0.81
+Mean Square Error for batch  8  :  0.19
+
+Accuracy for batch  9  :  0.83
+Mean Square Error for batch  9  :  0.17
+
+Accuracy for batch  10  :  0.74
+Mean Square Error for batch  10  :  0.26
+
+Average Accuracy =  0.7789999999999999
+Average MSE =  0.2205
+
+
+\
+MLPClassifier(activation='logistic',
+              hidden_layer_sizes=(18, 14),
+              learning_rate_init=0.15000000000000002, max_iter=1000,
+              random_state=42, solver='sgd')
+Optimal MSE: 0.075
+
+Accuracy :  0.764
+Mean Square Error :  0.235
+[[1 0]
+ [1 0]
+ [0 1]
+ [1 0]
+ [0 1]]
+Confusion Matrix for each label : 
+[[[ 69  68]
+  [ 50 313]]
+
+ [[314  49]
+  [ 68  69]]]
+Classification Report : 
+              precision    recall  f1-score   support
+
+           0       0.82      0.86      0.84       363
+           1       0.58      0.50      0.54       137
+
+   micro avg       0.77      0.76      0.76       500
+   macro avg       0.70      0.68      0.69       500
+weighted avg       0.76      0.76      0.76       500
+ samples avg       0.76      0.76      0.76       500
+
+Accuracy
+[0.85 0.66 0.76 0.79 0.74 0.74 0.66 0.79 0.79 0.78]
+MSE
+[0.15  0.34  0.24  0.21  0.255 0.26  0.34  0.21  0.21  0.22 ]
+Average Accuracy =  0.756
+Average MSE =  0.2435
+
+Accuracy for batch  1  :  0.85
+Mean Square Error for batch  1  :  0.15
+
+Accuracy for batch  2  :  0.85
+Mean Square Error for batch  2  :  0.15
+
+Accuracy for batch  3  :  0.9
+Mean Square Error for batch  3  :  0.1
+
+Accuracy for batch  4  :  0.93
+Mean Square Error for batch  4  :  0.07
+
+Accuracy for batch  5  :  0.88
+Mean Square Error for batch  5  :  0.11499999999999999
+
+Accuracy for batch  6  :  0.9
+Mean Square Error for batch  6  :  0.1
+
+Accuracy for batch  7  :  0.88
+Mean Square Error for batch  7  :  0.12
+
+Accuracy for batch  8  :  0.92
+Mean Square Error for batch  8  :  0.08
+
+Accuracy for batch  9  :  0.91
+Mean Square Error for batch  9  :  0.09
+
+Accuracy for batch  10  :  0.78
+Mean Square Error for batch  10  :  0.22
+
+Average Accuracy =  0.8799999999999999
+Average MSE =  0.11949999999999998
+
+
+
+
+
+\ low accuracy but high k-fold accuracy? weird?
+MLPClassifier(max_iter=3000)
+Optimal MSE: 0.012
+
+Accuracy :  0.738
+Mean Square Error :  0.261
+[[1 0]
+ [1 0]
+ [1 0]
+ [1 0]
+ [1 0]]
+Confusion Matrix for each label : 
+[[[ 78  59]
+  [ 72 291]]
+
+ [[291  72]
+  [ 58  79]]]
+Classification Report : 
+              precision    recall  f1-score   support
+
+           0       0.83      0.80      0.82       363
+           1       0.52      0.58      0.55       137
+
+   micro avg       0.74      0.74      0.74       500
+   macro avg       0.68      0.69      0.68       500
+weighted avg       0.75      0.74      0.74       500
+ samples avg       0.74      0.74      0.74       500
+
+Accuracy
+[0.76 0.71 0.78 0.77 0.69 0.64 0.75 0.73 0.76 0.7 ]
+MSE
+[0.23  0.29  0.22  0.23  0.305 0.36  0.25  0.27  0.24  0.3  ]
+Average Accuracy =  0.729
+Average MSE =  0.26949999999999996
+
+k-fold
+
+Accuracy for batch  1  :  0.75
+Mean Square Error for batch  1  :  0.25
+
+Accuracy for batch  2  :  0.98
+Mean Square Error for batch  2  :  0.02
+
+Accuracy for batch  3  :  0.99
+Mean Square Error for batch  3  :  0.01
+
+Accuracy for batch  4  :  0.96
+Mean Square Error for batch  4  :  0.04
+
+Accuracy for batch  5  :  1.0
+Mean Square Error for batch  5  :  0.0
+
+Accuracy for batch  6  :  0.98
+Mean Square Error for batch  6  :  0.02
+
+Accuracy for batch  7  :  1.0
+Mean Square Error for batch  7  :  0.0
+
+Accuracy for batch  8  :  0.98
+Mean Square Error for batch  8  :  0.015
+...
+Mean Square Error for batch  10  :  0.315
+
+Average Accuracy =  0.932
+Average MSE =  0.067
+
+
+
+\best one probably
+Optimal Hyper-parameters :  {'hidden_layer_sizes': (48, 47), 'learning_rate_init': 0.04, 'max_iter': 2000}
+Optimal Accuracy :  0.7670000000000001
+
+MLPClassifier(activation='logistic', hidden_layer_sizes=(48, 47),
+              learning_rate_init=0.04, max_iter=2000, random_state=42,
+              solver='sgd')
+Optimal MSE: 0.242
+
+Accuracy :  0.752
+Mean Square Error :  0.248
+[[1 0]
+ [1 0]
+ [1 0]
+ [1 0]
+ [0 1]]
+Confusion Matrix for each label : 
+[[[ 78  63]
+  [ 61 298]]
+
+ [[298  61]
+  [ 63  78]]]
+Classification Report : 
+              precision    recall  f1-score   support
+
+           0       0.83      0.83      0.83       359
+           1       0.56      0.55      0.56       141
+
+   micro avg       0.75      0.75      0.75       500
+   macro avg       0.69      0.69      0.69       500
+weighted avg       0.75      0.75      0.75       500
+ samples avg       0.75      0.75      0.75       500
+
+Accuracy
+[0.75 0.68 0.78 0.81 0.77 0.72 0.65 0.78 0.8  0.68]
+MSE
+[0.25 0.32 0.22 0.19 0.23 0.28 0.35 0.22 0.2  0.32]
+Average Accuracy =  0.742
+Average MSE =  0.258
+
+k-fold
+Average Accuracy =  0.749
+Average MSE =  0.251
+
+
+
