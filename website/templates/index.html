@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<!--From https://codepen.io/frytyler/pen/EGdtg-->
 <head>
   <meta charset="UTF-8">
   <title>ML API</title>
@@ -39,6 +38,12 @@
         <input type="text" name="Male sing" placeholder="Male sing" required="required" />
         <input type="text" name="Male mar/wid" placeholder="Male mar/wid" required="required" />
 
+        <!-- Button to generate random input -->
+        <button type="button" onclick="generateRandomInput()">Generate Random Input</button>
+
+        
+        <br>
+        <br>
         <!-- Dropdown menu for selecting the model -->
         <select name="selected_model" required="required">
           {% for model in models %}
@@ -46,12 +51,16 @@
           {% endfor %}
         </select>
 
-        <!-- Button to generate random input -->
-        <button type="button" onclick="generateRandomInput()">Generate Random Input</button>
-
+        <!-- Dropdown menu for selecting the classifier type -->
+        <select name="selected_cls" required="required">
+          <option value="Logistic Regression">Logistic Regression</option>
+          <option value="Random Forest">Random Forest</option>
+          <option value="Neural Network">Neural Network</option>
+        </select>
+        
+        <!-- Button to submit input and get prediction -->
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
       </form>
-
     <br>
     <br>
     {{ prediction_text }}
@@ -138,6 +147,5 @@
       }
     }
  </script>
-
 </body>
 </html>

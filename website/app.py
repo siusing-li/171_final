@@ -1,46 +1,79 @@
 import numpy as np
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, render_template
 import pickle
+
+
+# Load six logistic regression models and store them in a dictionary
+log_models = {}
+log_pkl_files = ['Log_germanBusiness.pkl', 'Log_germanCarNew.pkl', 'Log_germanCarUsed.pkl',
+            'Log_germanFurniture.pkl', 'Log_germanRadio_TV.pkl', 'Log_germanRepairs.pkl',
+            'Log_germanAppliance.pkl', 'Log_germanOther.pkl', 'Log_germanRetraining.pkl', 'Log_germanEducation.pkl']
+for file in log_pkl_files:
+    model_name = file[4:-4]
+    log_models[model_name] = pickle.load(open(file, "rb"))
+
+# Load six random forest models and store them in a dictionary
+rf_models = {}
+rf_pkl_files = ['Rf_germanBusiness.pkl', 'Rf_germanCarNew.pkl', 'Rf_germanCarUsed.pkl',
+            'Rf_germanFurniture.pkl', 'Rf_germanRadio_TV.pkl', 'Rf_germanRepairs.pkl',
+            'Rf_germanAppliance.pkl', 'Rf_germanOther.pkl', 'Rf_germanRetraining.pkl', 'Rf_germanEducation.pkl']
+for file in rf_pkl_files:
+    model_name = file[3:-4]
+    rf_models[model_name] = pickle.load(open(file, "rb"))
+
+# Load six neural network models and store them in a dictionary
+nn_models = {}
+nn_pkl_files = ['Nn_germanBusiness.pkl', 'Nn_germanCarNew.pkl', 'Nn_germanCarUsed.pkl',
+            'Nn_germanFurniture.pkl', 'Nn_germanRadio_TV.pkl', 'Nn_germanRepairs.pkl',
+            'Nn_germanAppliance.pkl', 'Nn_germanOther.pkl', 'Nn_germanRetraining.pkl', 'Nn_germanEducation.pkl']
+for file in nn_pkl_files:
+    model_name = file[3:-4]
+    nn_models[model_name] = pickle.load(open(file, "rb"))
+
 
 # Create Flask app
 app = Flask(__name__)
 
-# Load seven models and store them in a dictionary
-models = {}
-pkl_files = ['germanBusiness_model.pkl', 'germanCarNew_model.pkl', 'germanCarUsed_model.pkl',
-            'germanFurniture_model.pkl', 'germanRadio_TV_model.pkl', 'germanRepairs_model.pkl']
-for file in pkl_files:
-    model_name = file[:-10]
-    models[model_name] = pickle.load(open(file, "rb"))
-
-# Routes
+# ROUTES
+# Home
 @app.route("/")
 def home():
-    return render_template("index.html", models=models.keys())
+    return render_template("index.html", models=log_models.keys())
 
+# Predict
 @app.route("/predict", methods=["POST"])
 def predict():
+    # Get the user choice of model and classifier type
     selected_model_name = request.form.get("selected_model")
-    selected_model = models[selected_model_name]
+    selected_cls = request.form.get("selected_cls")
 
-    #int_features = [int(x) for x in request.form.values() if isinstance(x, (int, str))]
-    #features = [np.array(int_features)]
+    # Get the appropriate model pkl file based off user input
+    if(selected_cls == "Logistic Regression"):
+        selected_model = log_models[selected_model_name]
+    elif(selected_cls == "Random Forest"):
+        selected_model = rf_models[selected_model_name]
+    else:
+        selected_model = nn_models[selected_model_name]
+
+    # Get the features from user input
     int_features = []
-	
     for key in request.form.keys():
-        if key != 'selected_model':
-            int_features.append(int(request.form[key]))
-                        
+        if key != 'selected_model' and key != 'selected_cls':
+            int_features.append(int(request.form[key]))                   
     features = [np.array(int_features)]
 
+    # Make prediction using the model and features
     prediction = selected_model.predict(features)
 
+    # Custom output based on prediction result
     output = "HIGH CREDIT RISK"
     if prediction == 1:
         output = "LOW CREDIT RISK"
 
-    return render_template("index.html", models=models.keys(), selected_model=selected_model_name,
-                           prediction_text=f"The prediction for {selected_model_name} is {output}")
+    # Render the index.html file with provided models and output predictions
+    return render_template("index.html", models=log_models.keys(), prediction_text=f"The prediction for {selected_model_name} using {selected_cls} is {output}")
 
+
+# Run the Flask App in main function
 if __name__ == "__main__":
     app.run(debug=True)
