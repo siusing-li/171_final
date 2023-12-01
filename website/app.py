@@ -9,7 +9,7 @@ log_pkl_files = ['Log_germanBusiness.pkl', 'Log_germanCarNew.pkl', 'Log_germanCa
             'Log_germanFurniture.pkl', 'Log_germanRadio_TV.pkl', 'Log_germanRepairs.pkl',
             'Log_germanAppliance.pkl', 'Log_germanOther.pkl', 'Log_germanRetraining.pkl', 'Log_germanEducation.pkl']
 for file in log_pkl_files:
-    model_name = file[4:-4]
+    model_name = file[10:-4]
     log_models[model_name] = pickle.load(open(file, "rb"))
 
 # Load six random forest models and store them in a dictionary
@@ -58,21 +58,26 @@ def predict():
     # Get the features from user input
     int_features = []
     for key in request.form.keys():
-        if key != 'selected_model' and key != 'selected_cls':
+        if request.form[key] == "Male div":
+            int_features.extend([1, 0, 0, 0])
+        elif request.form[key] == "Female div/mar":
+            int_features.extend([0, 1, 0, 0])
+        elif request.form[key] == "Male sing":
+            int_features.extend([0, 0, 1, 0])
+        elif request.form[key] == "Male mar/wid":
+            int_features.extend([0, 0, 0, 1])
+        elif key != 'selected_model' and key != 'selected_cls':
             int_features.append(int(request.form[key]))                   
     features = [np.array(int_features)]
 
     # Make prediction using the model and features
     prediction = selected_model.predict(features)
 
-    # Custom output based on prediction result
-    output = "HIGH CREDIT RISK"
-    if prediction == 1:
-        output = "LOW CREDIT RISK"
-
-    # Render the index.html file with provided models and output predictions
-    return render_template("index.html", models=log_models.keys(), prediction_text=f"The prediction for {selected_model_name} using {selected_cls} is {output}")
-
+    # Render the index.html file with provided models and output predictions (Custom good/bad output based on prediction result)
+    if(prediction == 1):
+        return render_template("index.html", models=log_models.keys(), features = features, good_prediction_text=f"The prediction for this {selected_model_name} loan using {selected_cls} is LOW CREDIT RISK")
+    else:
+        return render_template("index.html", models=log_models.keys(), features = features, bad_prediction_text=f"The prediction for this {selected_model_name} loan using {selected_cls} is HIGH CREDIT RISK")
 
 # Run the Flask App in main function
 if __name__ == "__main__":
