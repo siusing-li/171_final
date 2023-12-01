@@ -14,8 +14,29 @@
   <div class="login">
     <h1>German Credit Risk Prediction</h1>
 
+    <!-- Outputs Prediction Text (this is set in predict route, empty in home route) -->
+    <div id="goodPredictionText">{{ good_prediction_text }}</div>
+    <div id="badPredictionText">{{ bad_prediction_text }}</div>
+
       <!-- Main Input For Receiving Query to our ML -->
       <form action="{{ url_for('predict')}}"method="post">
+        
+        <!-- Dropdown menu for selecting the classifier type -->
+        <p>Classifier ML Model Type</p>
+        <select name="selected_cls" required="required">
+          <option value="Logistic Regression">Logistic Regression</option>
+          <option value="Random Forest">Random Forest</option>
+          <option value="Neural Network">Neural Network</option>
+        </select>
+
+        <!-- Dropdown menu for selecting the model -->
+        <p>Purpose of the Loan</p>
+        <select name="selected_model" required="required">
+          {% for model in models %}
+            <option value="{{ model }}">{{ model }}</option>
+          {% endfor %}
+        </select>
+
         <p>Status checking account (0-3)</p>
         <input type="text" name="Status checking" placeholder="Status checking" required="required" />
         <p>Duration in month</p>
@@ -52,52 +73,45 @@
         <input type="text" name="Telephone" placeholder="Telephone" required="required" />
         <p>Foreign worker (1 if applies to you, else 0)</p>
         <input type="text" name="Foreign worker" placeholder="Foreign worker" required="required" />
-        <p>Male div (1 if applies to you, else 0)</p>
-        <input type="text" name="Male div" placeholder="Male div" required="required" />
-        <p>Female div/mar (1 if applies to you, else 0)</p>
-        <input type="text" name="Female div/mar" placeholder="Female div/mar" required="required" />
-        <p>Male sing (1 if applies to you, else 0)</p>
-        <input type="text" name="Male sing" placeholder="Male sing" required="required" />
-        <p>Male mar/wid (1 if applies to you, else 0)</p>
-        <input type="text" name="Male mar/wid" placeholder="Male mar/wid" required="required" />
+
+        <!-- Dropdown menu for selecting sex/relationship status -->
+        <p>Sex and Relationship Status</p>
+        <select name="Sex and Relationship Status" required="required">
+          <option value="Male div">Male Divorced</option>
+          <option value="Female div/mar">Female Divorced/Married</option>
+          <option value="Male sing">Male Single</option>
+          <option value="Male mar/wid">Male Married/Widowed</option>
+        </select>
 
         <!-- Button to generate random input -->
         <p>Generate Random Input</p>
         <button type="button" onclick="generateRandomInput()">Generate Random Input</button>
-
-        
-        <br>
-        <br>
-        <!-- Dropdown menu for selecting the model -->
-        <select name="selected_model" required="required">
-          {% for model in models %}
-            <option value="{{ model }}">{{ model }}</option>
-          {% endfor %}
-        </select>
-
-        <!-- Dropdown menu for selecting the classifier type -->
-        <select name="selected_cls" required="required">
-          <option value="Logistic Regression">Logistic Regression</option>
-          <option value="Random Forest">Random Forest</option>
-          <option value="Neural Network">Neural Network</option>
-        </select>
-        
+      
         <!-- Button to submit input and get prediction -->
+        <p>Make Prediction</p>
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
       </form>
     <br>
     <br>
-    {{ prediction_text }}
+    
   </div>
 
   <script>
     function generateRandomInput() {
-      var randomRelationship = Math.floor(Math.random() * 4); // Random int value between 0 and 3
-
+      //For text Inputs
       document.querySelectorAll('input[type="text"]').forEach(function(input) {
         //random value generation based on the input name and random relation status
         input.value = generateRandomValue(input.name, randomRelationship);
       });
+
+      // For the specific select input of Sex and Relationship Status
+      var relationship = document.querySelector('select[name="Sex and Relationship Status"]');
+      if (relationship) {
+        // Generate a random index for the select element
+        var randomRelationship = Math.floor(Math.random() * relationship.options.length); // Random int value between 0 and 3
+        // Set the selected index for the select element
+        relationship.selectedIndex = randomRelationship;
+      }
     }
 
     function generateRandomValue(inputName, randomRelationship) {
@@ -154,17 +168,7 @@
         return Math.floor(Math.random() * 2);       // Random int value between 0 and 1
 
       } else if (inputName === 'Foreign worker') {
-        return Math.floor(Math.random() * 2);       // Random int value between 0 and 1
-      
-      // Randomly assign 1 to 1 one of the relationship status features
-      } else if (inputName === 'Male div' && randomRelationship === 0) {
-        return 1;
-      } else if (inputName === 'Female div/mar' && randomRelationship === 1) {
-        return 1;     
-      } else if (inputName === 'Male sing' && randomRelationship === 2) {
-        return 1;
-      } else if (inputName === 'Male mar/wid' && randomRelationship === 3) {
-        return 1;       
+        return Math.floor(Math.random() * 2);       // Random int value between 0 and 1    
       } else {
         // Default random value
         return 0;
