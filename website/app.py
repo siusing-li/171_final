@@ -18,7 +18,7 @@ rf_pkl_files = ['Rf_germanBusiness.pkl', 'Rf_germanCarNew.pkl', 'Rf_germanCarUse
             'Rf_germanFurniture.pkl', 'Rf_germanRadio_TV.pkl', 'Rf_germanRepairs.pkl',
             'Rf_germanAppliance.pkl', 'Rf_germanOther.pkl', 'Rf_germanRetraining.pkl', 'Rf_germanEducation.pkl']
 for file in rf_pkl_files:
-    model_name = file[3:-4]
+    model_name = file[9:-4]
     rf_models[model_name] = pickle.load(open(file, "rb"))
 
 # Load six neural network models and store them in a dictionary
@@ -27,7 +27,7 @@ nn_pkl_files = ['Nn_germanBusiness.pkl', 'Nn_germanCarNew.pkl', 'Nn_germanCarUse
             'Nn_germanFurniture.pkl', 'Nn_germanRadio_TV.pkl', 'Nn_germanRepairs.pkl',
             'Nn_germanAppliance.pkl', 'Nn_germanOther.pkl', 'Nn_germanRetraining.pkl', 'Nn_germanEducation.pkl']
 for file in nn_pkl_files:
-    model_name = file[3:-4]
+    model_name = file[9:-4]
     nn_models[model_name] = pickle.load(open(file, "rb"))
 
 
