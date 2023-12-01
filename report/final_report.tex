@@ -242,9 +242,7 @@ We recorded the accuracy and MSE for each of the models we made. These results a
 
 
 \subsection{Neural Network (Multilayer Perceptron)}
-Neural networks, in particular simple perceptron models seemed ideal for the type of data we selected. We had a relatively small set of inputs, and a single binary output. 
-
-We tried a variety of different hyperparameters with varying activation functions and number of hidden layers. After rigorous testing, we have only achieved a model with the greatest accuracy of around 75\%. Different activation functions such as sigmoid and relu produced similar results. It seems like increasing the number of hidden layers decreased the overall accuracy of model. The best model had 2 hidden layers and used the sigmoid function. We will discuss later why our accuracy is so low, even with extensive training and hyperparameter tuning.
+Neural networks, in particular simple perceptron models seemed ideal for the type of data we selected. We had a relatively small set of inputs, and a single binary output. We did not end up splitting the model into separate categories because the dataset of 1000 entries all together was barely large enough to train a neural network. We will discuss the ramifications of the small dataset in later sections.
 
 \subsubsection{Training}
 TODO: add graphs here showing the accuracy and loss of the model over time
@@ -256,6 +254,7 @@ TODO: NN hyperparameters
 
 \section{Conclusion and Overview}
 \subsection{Comparing Models}
+TODO: use the New Car models dataset to compare each model
 
 \subsection{Overall Sucess}
 
