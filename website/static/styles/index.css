@@ -53,3 +53,17 @@ select, select:focus-within {
     text-align: center;
     padding: 5px;
 }
+
+#goodPredictionText {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(49, 202, 69);
+}
+
+#badPredictionText {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(202, 49, 49);
+}
