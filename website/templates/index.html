@@ -16,7 +16,7 @@
 
       <!-- Main Input For Receiving Query to our ML -->
       <form action="{{ url_for('predict')}}"method="post">
-        <p>Status checking (0-3)</p>
+        <p>Status checking account (0-3)</p>
         <input type="text" name="Status checking" placeholder="Status checking" required="required" />
         <p>Duration in month</p>
         <input type="text" name="Duration in month" placeholder="Duration in month" required="required" />
@@ -32,7 +32,7 @@
         <input type="text" name="Installment rate %" placeholder="Installment rate %" required="required" />
         <p>Other debtors (0-2)</p>
         <input type="text" name="Other debtors" placeholder="Other debtors" required="required" />
-        <p>Present residence (1-4)</p>
+        <p>Present residence since </p>
         <input type="text" name="Present residence" placeholder="Present residence" required="required" />
         <p>Property (0-3)</p>
         <input type="text" name="Property" placeholder="Property" required="required" />
@@ -46,11 +46,11 @@
         <input type="text" name="# Existing credits" placeholder="# Existing credits" required="required" />
         <p>Job (0-3)</p>
         <input type="text" name="Job" placeholder="Job" required="required" />
-        <p># Dependents (0-3)</p>
+        <p># Dependents</p>
         <input type="text" name="# Dependents" placeholder="# Dependents" required="required" />
-        <p>Telephone (0-1)</p>
+        <p>Telephone (1 if you have one, else 0)</p>
         <input type="text" name="Telephone" placeholder="Telephone" required="required" />
-        <p>Foreign worker (0-1)</p>
+        <p>Foreign worker (1 if applies to you, else 0)</p>
         <input type="text" name="Foreign worker" placeholder="Foreign worker" required="required" />
         <p>Male div (1 if applies to you, else 0)</p>
         <input type="text" name="Male div" placeholder="Male div" required="required" />
