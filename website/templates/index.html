@@ -7,6 +7,7 @@
   <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
 </head>
 
 <body>
@@ -15,30 +16,53 @@
 
       <!-- Main Input For Receiving Query to our ML -->
       <form action="{{ url_for('predict')}}"method="post">
+        <p>Status checking (0-3)</p>
         <input type="text" name="Status checking" placeholder="Status checking" required="required" />
+        <p>Duration in month</p>
         <input type="text" name="Duration in month" placeholder="Duration in month" required="required" />
+        <p>Credit history (0-4)</p>
         <input type="text" name="Credit history" placeholder="Credit history" required="required" />
+        <p>Credit amount</p>
         <input type="text" name="Credit amount" placeholder="Credit amount" required="required" />
+        <p>Savings account (0-4)</p>
         <input type="text" name="Savings account" placeholder="Savings account" required="required" />
+        <p>Present employment (0-4)</p>
         <input type="text" name="Present employment" placeholder="Present employment" required="required" />
+        <p>Installment rate %</p>
         <input type="text" name="Installment rate %" placeholder="Installment rate %" required="required" />
+        <p>Other debtors (0-2)</p>
         <input type="text" name="Other debtors" placeholder="Other debtors" required="required" />
+        <p>Present residence (1-4)</p>
         <input type="text" name="Present residence" placeholder="Present residence" required="required" />
+        <p>Property (0-3)</p>
         <input type="text" name="Property" placeholder="Property" required="required" />
+        <p>Age in years</p>
         <input type="text" name="Age in years" placeholder="Age in years" required="required" />
+        <p>Other installment plans  (0-2)</p>
         <input type="text" name="Other installment plans" placeholder="Other installment plans" required="required" />
+        <p>Housing (0-2)</p>
         <input type="text" name="Housing" placeholder="Housing" required="required" />
+        <p># Existing credits</p>
         <input type="text" name="# Existing credits" placeholder="# Existing credits" required="required" />
+        <p>Job (0-3)</p>
         <input type="text" name="Job" placeholder="Job" required="required" />
+        <p># Dependents (0-3)</p>
         <input type="text" name="# Dependents" placeholder="# Dependents" required="required" />
+        <p>Telephone (0-1)</p>
         <input type="text" name="Telephone" placeholder="Telephone" required="required" />
+        <p>Foreign worker (0-1)</p>
         <input type="text" name="Foreign worker" placeholder="Foreign worker" required="required" />
+        <p>Male div (1 if applies to you, else 0)</p>
         <input type="text" name="Male div" placeholder="Male div" required="required" />
+        <p>Female div/mar (1 if applies to you, else 0)</p>
         <input type="text" name="Female div/mar" placeholder="Female div/mar" required="required" />
+        <p>Male sing (1 if applies to you, else 0)</p>
         <input type="text" name="Male sing" placeholder="Male sing" required="required" />
+        <p>Male mar/wid (1 if applies to you, else 0)</p>
         <input type="text" name="Male mar/wid" placeholder="Male mar/wid" required="required" />
 
         <!-- Button to generate random input -->
+        <p>Generate Random Input</p>
         <button type="button" onclick="generateRandomInput()">Generate Random Input</button>
 
         

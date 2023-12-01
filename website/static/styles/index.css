@@ -1,0 +1,55 @@
+body {
+    text-align: center;
+    background:rgb(27, 27, 27);
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite; */
+    color: rgb(255, 255, 255);
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 10vw;
+    margin-right:10vw;
+}
+
+p {
+    font-size: calc(10px + .8vmin);
+}
+
+input {
+    font-family: inherit;
+    background: rgba(131, 131, 131, 0.226);
+    color: #3179ca;
+    border-radius: 5px;
+    border-style: ridge;
+    text-indent: 5px;
+    margin-bottom: 1px;
+    padding: 5px;
+}
+
+button {
+    font-family: inherit;
+    height:auto;
+    background: rgba(131, 131, 131, 0.226);
+    border-radius: 5px;
+    transition-duration: 0.3s;
+    color: #1B6AC7;
+    border-color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: calc(10px + .8vmin);
+}
+
+button:hover {
+    background: rgb(201, 201, 201);
+    border-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+select, select:focus-within {
+    border-radius: 3px;
+    background: rgba(131, 131, 131, 0.226);
+    color: #3179ca;
+    border-color: rgb(159, 174, 216);
+    font-family: inherit;
+    text-align: center;
+    padding: 5px;
+}
