@@ -1,8 +1,8 @@
 # 171_final
 
 ## To Run the App
-1. Navigate to the website directory
-2. Run app.py (type in python app.py to terminal or run from VSCode)
+1. Navigate to the *website* directory
+2. Run *app.py* (type in python app.py to terminal or run from VSCode)
 3. Navigate to *127.0.0.1:5000* (type into browser, or click on link from terminal output)
 4. Input the specified model, classifier, and features and click *Predict* to see the prediction!
 4. For more details, check out this video demo: https://youtu.be/jjfwArwuAMc
