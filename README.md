@@ -1,5 +1,13 @@
 # 171_final
 
+## To Run the App
+1. Navigate to the website directory
+2. Run app.py (type in python app.py to terminal or run from VSCode)
+3. Navigate to *127.0.0.1:5000* (type into browser, or click on link from terminal output)
+4. Input the specified model, classifier, and features and click *Predict* to see the prediction!
+4. For more details, check out this video demo: https://youtu.be/jjfwArwuAMc
+
+## Overview of Repository
 ### Data Processing and Datasets
 The *germanProcessor* jupyter notebook under data_processing folder reads in the original dataset from *171_final/datasets/statlog+german+credit+data/german.data*.  We then process and clean the data using label encoding and one-hot encoding where appropriate.  This is outputted to *germanProcessed.csv*.  We then rename the Purpose attribute to human readable format and this dataset is outputted to *germanProcessed2*.csv.  The jupyter notebook also prints out the heatmap and pairplot for the overall dataset.  We then split the dataset into 10 smaller datasets based off the attribute Purpose and these are outputted to the csvs under *171_final/datasets/cleanData*.  The *germanProcessor* jupyter notebook also contains heatmaps and pairplots for each of the smaller datasets.  Some datasets were additionally modified by dropping unchanging columns, such as *germanAppliance2.csv*.
 
