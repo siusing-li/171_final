@@ -242,25 +242,39 @@ We recorded the accuracy and MSE for each of the models we made. These results a
 
 
 \subsection{Neural Network (Multilayer Perceptron)}
-Neural networks, in particular simple perceptron models seemed ideal for the type of data we selected. We had a relatively small set of inputs, and a single binary output. We did not end up splitting the model into separate categories because the dataset of 1000 entries all together was barely large enough to train a neural network. We will discuss the ramifications of the small dataset in later sections.
-
-\subsubsection{Training}
-TODO: add graphs here showing the accuracy and loss of the model over time
-
-\subsubsection{Hyperparameter Tuning}
-TODO: NN hyperparameters
+Neural networks, in particular simple perceptron models seemed ideal for the type of data we selected. We had a relatively small set of inputs, and a single binary output. We did not end up splitting the model into separate categories because the dataset of 1000 entries all together was barely large enough to train a neural network.
 
 \subsubsection{Results}
+\figure[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/nn_results.png}
+    \caption{Results for Neural Network}\label{fig:nn_results}
+\endfigure
+We achieved an accuracy of 0.744 and an MSE of 0.256. This is not as good as the other models, but it is still a reasonable result. Because this model is not split by purpose, the dimensionality is much higher, which may have contributed to the lower accuracy. Since the model is much more likely to overfit, we chose early stopping to prevent this. 
 
 \section{Conclusion and Overview}
 \subsection{Comparing Models}
-TODO: use the New Car models dataset to compare each model
+Since we had a split in how we were able to train and process our models, it can become difficult to directly compare results between our three models. We chose to look at the \texttt{new car} dataset in order to compare them, since it was large and had good results for all three models. \ref{fig:logistic_newcar_results} shows the results for the logistic regression model and \ref{fig:randomforest_newcar_results} shows the random forest model.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/logistic_newcar.png}
+    \caption{Logistic Model Results for New Car Dataset}\label{fig:logistic_newcar_results}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/randomforest_newcar.png}
+    \caption{Random Forest Model Results for Random Forest}\label{fig:randomforest_newcar_results}
+\end{figure}
+
+Random Forest proved to be the most effective in this comparison, with our neural network model coming in second and logistic in last. This is not entirely surprising, as logistic regression is a relatively simple model. Our largest issue was the size of our dataset, which was not large enough to train a neural network effectively. If the dataset was larger, we would expect the neural network to perform better than the random forest model.
+
 
 \subsection{Overall Sucess}
+We think that we achieved the goals that we established when we began this project. We discovered some of the issues that may arise when trying to implement credit score calculations on a large, commercial scale, and we were able to train models that could predict credit scores with reasonable accuracy.
 
 \subsection{Looking Forward and Improvements}
+Our main takeaway for future research is that a better dataset is needed. The dataset we used was too small to train a neural network effectively, and it was too small to split into separate datasets for each purpose. It is reasonable to expect that any companies trying to use this will have access to datasets many orders of magnitude larger. But we also saw that even small datasets can produce predictions that are accurate enough to be useful. It may also be interesting to explore more types of models in the future, such as support vector machines.
 
-\newpage
-TODO: Add Github link in the report
 
 \end{document}
