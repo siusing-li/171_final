@@ -89,7 +89,7 @@ for name, df in dataframes.items():
 
     # FOR NEURAL NETWORK
     best_nn_cls = MLPClassifier(activation='logistic', hidden_layer_sizes=(3, 15),
-              learning_rate_init=0.3, max_iter=500, random_state=42,
+              learning_rate_init=0.3, max_iter=5000, random_state=42,
               solver='sgd')
     
     best_nn_cls.fit(X_train, y_train)
