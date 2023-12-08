@@ -15,11 +15,13 @@ The *germanProcessor* jupyter notebook under data_processing folder reads in the
 You will find the pdf and latex source of our final report and our presentation slides here.
 
 ### Src
-This contains our three machine learning models: Logistic Regression, Random Forest and Nerual Network.  The *germanLogistic* and *germanRandomForest* are implemented using the csvs under *cleanData* folder.  For the neural network, the *cleanData* csvs were too small for the model so it is implemented using the entire dataset (data was still processed using label and onehot encoding).  The *german3HLayerNN(worse)* was our first attempt and the *germanNeuralNetwork* is our final neural network model.  The results of the Logistic Regression and Random Forest models can be seen in their respective jupyter notebooks in the form of classification reports and ROC curves.  The results of the neural network can be found in the *ANN-results.txt* file.
+This contains our three machine learning models: Logistic Regression, Random Forest and Nerual Network.  The *germanLogistic* and *germanRandomForest* are implemented using the csvs under *cleanData* folder.  For the neural network, the *cleanData* csvs were too small for the model so it is implemented using the entire dataset (data was still processed using label and onehot encoding).  The *german3HLayerNN(worse)* was our first attempt and the *germanNeuralNetwork* is our final neural network model.  The results of the Logistic Regression and Random Forest models can be seen in their respective jupyter notebooks in the form of classification reports and ROC curves.  The results of the neural network can be found in the *ANN-results.txt* file.  The neural network models may take a while to run becuase the model takes a long time to converge.
 
 ### Website
 #### ML Model (model.py)
 The best version of each of the three ML models are contained in *model.py*.  This file fits each of the smaller datasets onto each of the models (10 datasets with 3 models each means 30 total) and outputs them to pickle files.  So for example, *Log_germanAppliance.pkl* is the pickle file containing the data for the Logistic Regression model fitted to the germanAppliance dataset. 
+
+Note:  You do not need to run this file; we have already run the models and dumped them into the pickle files.  If you choose to run this file, be aware that it may take a while because the neural network takes a lot of iterations for the stochastic gradient descent to converge.
 #### Flask App (app.py)
 Then, *app.py* contains our Flask app which consists of the home (/) and predict (/predict) routes. First, the app reads in the pickle files.  Then, the home route just shows the *index.html* template.  Then, the predict route takes user input from the form contained in *index.html*, makes a prediction using the selected classifier and model based off the user inputted features, and outputs the prediction back to *index.html*.
 
