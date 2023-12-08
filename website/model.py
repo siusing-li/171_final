@@ -7,10 +7,10 @@ from sklearn.neural_network import MLPClassifier
 import pickle
 
 
-#Took out germanAppliance2, germanOther, germanRetraining2, germanEducation2
+#Need to take out germanAppliance, germanOther, germanRetraining (the datasets are too small)
 file_list = ['germanBusiness.csv', 'germanCarNew.csv', 'germanCarUsed.csv',
             'germanFurniture.csv', 'germanRadio_TV.csv', 'germanRepairs.csv',
-            'germanAppliance.csv', 'germanOther.csv', 'germanRetraining.csv', 'germanEducation.csv']
+            'germanEducation.csv']
 
 # Initialize an empty dictionary to store DataFrames
 dataframes = {}
